@@ -3,13 +3,18 @@ package br.com.fiap.boxapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.offset
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import br.com.fiap.boxapp.ui.theme.BoxAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +27,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    // Componentes de Layouts
+                    BoxScreen()
+
                 }
             }
         }
@@ -30,17 +37,35 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+fun BoxScreen() {
+    Box(
+        contentAlignment = Alignment.TopEnd
+    ) {
+        Button(
+            onClick = { /*TODO*/ },
+            modifier = Modifier.align(Alignment.TopStart)
+            ) {
+            Text(text = "Clique aqui")
+        }
+        Text(
+            text = "FIAP",
+            modifier = Modifier.align(Alignment.TopStart)
+            )
+        Button(
+            onClick = { /*TODO*/ },
+            modifier = Modifier
+                .align(Alignment.BottomEnd)
+                .offset(x = 20.dp, y = 10.dp)
+        ) {
+            Text(text = "Outro Botão")
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    BoxAppTheme {
-        Greeting("Android")
+        }
     }
 }
+
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun BoxScreenPreview() {
+    BoxScreen()
+    }
