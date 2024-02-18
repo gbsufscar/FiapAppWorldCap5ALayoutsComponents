@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -75,53 +76,71 @@ fun BoxScreen() {
 @Composable
 fun ColumnRowScreen() {
     // Column principal
-    Column(modifier = Modifier
-        .background(Color.Cyan)) {
+    Column(
+        modifier = Modifier
+            .background(Color.Cyan)
+    ) {
         Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.SpaceEvenly,
             modifier = Modifier
                 .background(Color.Magenta)
-                .size(150.dp)
-        ) {
-            // Aqui vai o conteúdo
-        }
-        Row(
-            modifier = Modifier
                 .fillMaxWidth()
-                .height(150.dp)
-                .background(Color.Green)
+                .height(300.dp)
         ) {
-            // Aqui vai o conteúdo
+            // Aqui vai o conteúdo da coluna
+            Button(onClick = { /*TODO*/ }) {
+                Text(text = "Botão 01")
+            }
+            Button(onClick = { /*TODO*/ }) {
+                Text(text = "Botão 02")
+            }
+            Button(onClick = { /*TODO*/ }) {
+                Text(text = "Botão 03")
+            }
+            Button(onClick = { /*TODO*/ }) {
+                Text(text = "Botão 03")
+            }
         }
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(150.dp)
-                .background((Color.Yellow))
-        ) {
-            Column(
+            Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(100.dp)
-                    .padding(8.dp)
-                    .background(Color.Red)
-                    .weight(0.7f)
+                    .height(150.dp)
+                    .background(Color.Green)
             ) {
                 // Aqui vai o conteúdo
             }
-            Column(
+            Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(100.dp)
-                    .padding(8.dp)
-                    .background(Color.Blue)
-                    .weight(0.7f)
+                    .height(150.dp)
+                    .background((Color.Yellow))
             ) {
-                // Aqui vai o conteúdo
-            }
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(100.dp)
+                        .padding(8.dp)
+                        .background(Color.Red)
+                        .weight(0.7f)
+                ) {
+                    // Aqui vai o conteúdo
+                }
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(100.dp)
+                        .padding(8.dp)
+                        .background(Color.Blue)
+                        .weight(0.7f)
+                ) {
+                    // Aqui vai o conteúdo
+                }
 
+            }
         }
     }
-}
+
 
 
 
