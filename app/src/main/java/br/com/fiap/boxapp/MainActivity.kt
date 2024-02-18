@@ -88,27 +88,35 @@ fun ColumnRowScreen() {
                 .fillMaxWidth()
                 .height(300.dp)
         ) {
-            // Aqui vai o conteúdo da coluna
+            // Aqui vai o conteúdo da coluna (4 botões)
             Button(onClick = { /*TODO*/ }) {
-                Text(text = "Botão 01")
+                Text(text = "Botão 1.01")
             }
             Button(onClick = { /*TODO*/ }) {
-                Text(text = "Botão 02")
+                Text(text = "Botão 1.02")
             }
             Button(onClick = { /*TODO*/ }) {
-                Text(text = "Botão 03")
+                Text(text = "Botão 1.03")
             }
             Button(onClick = { /*TODO*/ }) {
-                Text(text = "Botão 03")
+                Text(text = "Botão 1.04")
             }
         }
             Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceAround,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(150.dp)
                     .background(Color.Green)
             ) {
-                // Aqui vai o conteúdo
+                // Aqui vai o conteúdo na linha
+                Button(onClick = { /*TODO*/ }) {
+                    Text(text = "Botão 2.01")
+                }
+                Button(onClick = { /*TODO*/ }) {
+                    Text(text = "Botão 2.02")
+                }
             }
             Row(
                 modifier = Modifier
